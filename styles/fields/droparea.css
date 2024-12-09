@@ -25,7 +25,7 @@
   /* Esse &:has(input:focus) verifica se está em focu e se estiver aplica todas as configurações abaixo.*/
   &:hover, &:has(input:focus) {
     border-width: 2px;
-    border-color: var(--stroke-hightlight);
+    border-color: var(--stroke-highlight);
     background-color: var(--surface-secondary);
 
     & P {
@@ -33,7 +33,7 @@
     }
     /* Muda a cor do SVG pelo path*/
     & svg path {
-      stroke: var(--stroke-hightlight)
+      stroke: var(--stroke-highlight)
     }
   }
 

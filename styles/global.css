@@ -22,7 +22,6 @@
   --stroke-highlight: #F3541C;
   --semantic-error: #DC2626;
 
-  zoom: 100%;
 }
 
 body {
@@ -51,4 +50,102 @@ img {
 
 .flex-2 {
   flex: 2;
+}
+.desktop-only {
+  display: none;
+}
+
+.gap-1 {
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+
+  & #number {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 700px){
+  .desktop-only {
+    display: initial;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    grid-template-areas: "main aside"; /* Define a ordem correta */
+  
+    height: 100vh;
+    overflow: hidden;
+  
+  }
+
+  main {
+    grid-area: main;
+    overflow: auto;
+    padding: 4rem;
+    margin-top: 3rem;
+         
+    & .main-container {
+      max-width: 33rem;
+      padding-right: 1rem;
+      margin-left: 1.5rem;
+    }
+  
+    & .back {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1.rem;
+    }
+  
+    & h1 {
+      font: 600 1.5rem/1.25 var(--font-family);
+      margin-top: .9rem;
+      margin-bottom: .5rem;
+    }
+  }
+
+  aside {
+    grid-area: aside;
+    background-color: var(--surface-secondary);
+    padding: 4rem;
+    width: 100%;
+     
+  
+    & .aside-container {
+      max-width: 100%;
+      padding-left: 2rem;
+
+  
+      /* & para buscar a imagem dentro do aside */
+      & > img {
+        margin-top: 0.5rem;
+        align-self: center;
+        justify-self: center;
+      }
+    }
+  
+    & h2 {
+      font: 600 2.5rem/1.25 var(--font-family);
+      margin-bottom: .5rem;
+      margin-top: .5rem;
+      width: 30rem;
+        
+      & span {
+        color: var(--text-highlight);
+      }
+    }
+
+    & header {
+      display: flex;
+      flex-direction: column;
+      
+
+      & img {
+        width: 12rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
 }

@@ -1,15 +1,18 @@
 #app {
   display: grid;
-  grid-template-columns: 51.25%  48.75%;
-
+ 
+  flex-direction: column;
   height: 100vh;
   overflow: hidden;
+ 
 
 }
 
 main {
   overflow: auto;
-  padding: 4rem;
+  padding: 1.5rem;
+
+  order: 1; /* Garante que o main vem depois do aside */
 
   & .main-container {
     max-width: 33rem;
@@ -25,23 +28,19 @@ main {
 
   & h1 {
     font: 600 1.5rem/1.25 var(--font-family);
-    margin-top: .9rem;
+    margin-top: 1.5rem;
     margin-bottom: .5rem;
   }
 }
 
 aside {
   background-color: var(--surface-secondary);
-  padding: 4rem;
+  padding: 2rem;
+  align-items: center;
+  justify-self: center;
+  max-width: 100%;
 
-  & .aside-container {
-    max-width: 31rem;
-
-    /* & para buscar a imagem dentro do aside */
-    & > img {
-      margin-top: 2rem;
-    }
-  }
+  order: -1; /* Coloca o aside antes do main */
 
   & h2 {
     font: 600 2.5rem/1.25 var(--font-family);
@@ -52,4 +51,3 @@ aside {
     }
   }
 }
-
